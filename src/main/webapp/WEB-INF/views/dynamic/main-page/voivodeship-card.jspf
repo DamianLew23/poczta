@@ -1,0 +1,15 @@
+<%@ page contentType="text/html; charset=UTF-8" %>
+<!-- Voivodeship Card With Map Icon And Number of County -->
+<c:forEach items="${countyList}" var="county">
+    <div class="col-md-6 mb-3">
+        <div class="card shadow-sm h-100">
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-sm-2 text-center border-right"><i class="far fa-map text-primary fa-2x"></i></div>
+                    <div class="col-sm-6 text-center border-right">${county.name}</div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</c:forEach>
