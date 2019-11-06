@@ -36,11 +36,172 @@
     </div>
 
     <div class="container">
-        <h2 class="display-6 mb-4 text-secondary">Placówki Pocztowe wg Powiatów</h2>
         <div class="col-sm-12">
-        <div class="row row-eq-height mb-4">
+            <div class="row row-eq-height mb-4">
+                <div class="col-md-6 mb-3 p-0 pr-md-2">
+                    <div class="card shadow-sm h-100 p-3">
+                        <div class="card-body p-3">
+                            <h2 class="display-5 mb-4">Dane Adresowe</h2>
+                            <div class="row row-eq-height mb-2 pb-2 border-bottom">
+                                <div class="col-1">
+                                    <p><i class="fas fa-address-card text-primary fa-2x"></i></p>
+                                </div>
+                                <div class="col-5">
+                                    <p>Adres:</p>
+                                </div>
+                                <div class="col-6">
+                                    <p>${postOffice.address},</p>
+                                    <p>${postOffice.postcode.code} ${postOffice.city.name},</p>
+                                    <p>Polska</p>
+                                </div>
+                            </div>
+                            <div class="row row-eq-height mb-2 pb-2 border-bottom">
+                                <div class="col-1">
+                                    <p><i class="far fa-map text-primary fa-2x"></i></p>
+                                </div>
+                                <div class="col-5">
+                                    <p>Gmina:</p>
+                                    <p>Powiat:</p>
+                                    <p>Województwo:</p>
+                                </div>
+                                <div class="col-6">
+                                    <p>${postOffice.community.name}</p>
+                                    <p>${postOffice.county.name}</p>
+                                    <p>${postOffice.voivodeship.name}</p>
+                                </div>
+                            </div>
+                            <div class="row row-eq-height mb-2 pb-2 border-bottom">
+                                <div class="col-1">
+                                    <p><i class="fas fa-map-marker-alt text-primary fa-2x"></i></p>
+                                </div>
+                                <div class="col-5">
+                                    <p>Współrzędne:</p>
+                                </div>
+                                <div class="col-6">
+                                    <p>${postOffice.x},</p>
+                                    <p>${postOffice.y},</p>
+                                </div>
+                            </div>
+                            <div class="row row-eq-height mb-2 pb-2">
+                                <div class="col-1">
+                                    <p><i class="fas fa-phone-square text-primary fa-2x"></i></p>
+                                </div>
+                                <div class="col-5">
+                                    <p>Telefony:</p>
+                                </div>
+                                <div class="col-6">
+                                    <c:forEach items="${postOffice.phoneList}" var="phone">
+                                        <p>${phone.phoneNumber},</p>
+                                    </c:forEach>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 mb-3 p-0 pl-md-2">
+                    <div class="card shadow-sm h-100 p-3">
+                        <div class="card-body p-3">
+                            <h2 class="display-5 mb-4">Informacje o Poczcie ${postOffice.postOfficeName}</h2>
+                            <div class="row row-eq-height mb-2 pb-2 border-bottom">
+                                <div class="col-1">
+                                    <p class="mb-0"><i class="fas fa-info-circle text-primary fa-2x"></i></p>
+                                </div>
+                                <div class="col-5">
+                                    <p class="mb-0">Oferowane usługi:</p>
+                                </div>
+                                <div class="col-6">
+                                    <c:forEach items="${postOffice.featuresList}" var="feature">
+                                        <p>${feature.feature}</p>
+                                    </c:forEach>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
-        </div>
+            <div class="row row-eq-height mb-4">
+                <div class="col-md-6 mb-3 p-0 pr-md-2">
+                    <div class="card shadow-sm h-100 p-3">
+                        <div class="card-body p-3">
+                            <h2 class="display-5 mb-4">${postOffice.type.shortcut} ${postOffice.postOfficeName} Godziny Otwarcia:</h2>
+                            <div class="row row-eq-height mb-2 pb-2 border-bottom">
+                                <div class="col-1">
+                                    <p><i class="fas fa-address-card text-primary fa-2x"></i></p>
+                                </div>
+                                <div class="col-5">
+                                    <p>Adres:</p>
+                                </div>
+                                <div class="col-6">
+                                    <p>${postOffice.address},</p>
+                                    <p>${postOffice.postcode.code} ${postOffice.city.name},</p>
+                                    <p>Polska</p>
+                                </div>
+                            </div>
+                            <div class="row row-eq-height mb-2 pb-2 border-bottom">
+                                <div class="col-1">
+                                    <p><i class="far fa-map text-primary fa-2x"></i></p>
+                                </div>
+                                <div class="col-5">
+                                    <p>Gmina:</p>
+                                    <p>Powiat:</p>
+                                    <p>Województwo:</p>
+                                </div>
+                                <div class="col-6">
+                                    <p>${postOffice.community.name}</p>
+                                    <p>${postOffice.county.name}</p>
+                                    <p>${postOffice.voivodeship.name}</p>
+                                </div>
+                            </div>
+                            <div class="row row-eq-height mb-2 pb-2 border-bottom">
+                                <div class="col-1">
+                                    <p><i class="fas fa-map-marker-alt text-primary fa-2x"></i></p>
+                                </div>
+                                <div class="col-5">
+                                    <p>Współrzędne:</p>
+                                </div>
+                                <div class="col-6">
+                                    <p>${postOffice.x},</p>
+                                    <p>${postOffice.y},</p>
+                                </div>
+                            </div>
+                            <div class="row row-eq-height mb-2 pb-2">
+                                <div class="col-1">
+                                    <p><i class="fas fa-phone-square text-primary fa-2x"></i></p>
+                                </div>
+                                <div class="col-5">
+                                    <p>Telefony:</p>
+                                </div>
+                                <div class="col-6">
+                                    <c:forEach items="${postOffice.phoneList}" var="phone">
+                                        <p>${phone.phoneNumber},</p>
+                                    </c:forEach>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 mb-3 p-0 pl-md-2">
+                    <div class="card shadow-sm h-100 p-3">
+                        <div class="card-body p-3">
+                            <h2 class="display-5 mb-4">Informacje o Poczcie ${postOffice.postOfficeName}</h2>
+                            <div class="row row-eq-height mb-2 pb-2 border-bottom">
+                                <div class="col-1">
+                                    <p class="mb-0"><i class="fas fa-info-circle text-primary fa-2x"></i></p>
+                                </div>
+                                <div class="col-5">
+                                    <p class="mb-0">Oferowane usługi:</p>
+                                </div>
+                                <div class="col-6">
+                                    <c:forEach items="${postOffice.featuresList}" var="feature">
+                                        <p>${feature.feature}</p>
+                                    </c:forEach>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
     </div>
     </div>
 
